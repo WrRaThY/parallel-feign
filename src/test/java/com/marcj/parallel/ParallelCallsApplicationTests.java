@@ -1,4 +1,4 @@
-package com.marcj.parallelCalls;
+package com.marcj.parallel;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,7 @@
-package com.marcj.parallelCalls.resources;
+package com.marcj.parallel.resources;
 
-import com.marcj.parallelCalls.Client.CountryClient;
-import com.marcj.parallelCalls.Client.Output.Country;
+import com.marcj.parallel.client.CountryClient;
+import com.marcj.parallel.client.output.Country;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -16,13 +16,13 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 @Component
-@Api(value = "CountryResource")
+@Api(value = "CountryController")
 @RestController
-public class CountryResource {
+public class CountryController {
 
     private final CountryClient countryClient;
 
-    public CountryResource(
+    public CountryController(
             CountryClient countryClient
     ) {
         this.countryClient = countryClient;
@@ -40,7 +40,7 @@ public class CountryResource {
 
         List<String> europeanFrenchSpeakingCountries;
         try {
-            europeanFrenchSpeakingCountries = new ArrayList<>(countriesByLanguageFuture.get().stream().map(Country::getName).collect(Collectors.toList()));
+            europeanFrenchSpeakingCountries = countriesByLanguageFuture.get().stream().map(Country::getName).collect(Collectors.toList());
             europeanFrenchSpeakingCountries.retainAll(countriesByRegionFuture.get().stream().map(Country::getName).collect(Collectors.toList()));
         } catch (Throwable e) {
             throw e.getCause();

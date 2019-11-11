@@ -1,6 +1,6 @@
-package com.marcj.parallelCalls.Client;
+package com.marcj.parallel.client;
 
-import com.marcj.parallelCalls.Client.Output.Country;
+import com.marcj.parallel.client.output.Country;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -8,13 +8,14 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class CountryClient {
-    RestTemplate restTemplate = new RestTemplate();
+    private RestTemplate restTemplate = new RestTemplate();
 
     @Async
-    public CompletableFuture<List<Country>> getCountriesByLanguage(String language) {
+    public CompletableFuture<List<Country>> getCountriesByLanguage(String language) throws InterruptedException {
         String url = "https://restcountries.eu/rest/v2/lang/" + language + "?fields=name";
         Country[] response = restTemplate.getForObject(url, Country[].class);
 
@@ -22,7 +23,7 @@ public class CountryClient {
     }
 
     @Async
-    public CompletableFuture<List<Country>> getCountriesByRegion(String region) {
+    public CompletableFuture<List<Country>> getCountriesByRegion(String region) throws InterruptedException {
         String url = "https://restcountries.eu/rest/v2/region/" + region + "?fields=name";
         Country[] response = restTemplate.getForObject(url, Country[].class);
 

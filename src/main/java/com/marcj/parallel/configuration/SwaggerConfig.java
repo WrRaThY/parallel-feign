@@ -1,4 +1,4 @@
-package com.marcj.parallelCalls.configuration;
+package com.marcj.parallel.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

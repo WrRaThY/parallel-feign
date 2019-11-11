@@ -1,6 +1,6 @@
-package com.marcj.parallelCalls.Client;
+package com.marcj.parallel.client;
 
-import com.marcj.parallelCalls.Client.Output.Country;
+import com.marcj.parallel.client.output.Country;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
