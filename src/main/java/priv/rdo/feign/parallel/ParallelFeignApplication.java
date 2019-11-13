@@ -1,12 +1,11 @@
-package com.marcj.parallel;
+package priv.rdo.feign.parallel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ParallelCallsApplication {
-
+public class ParallelFeignApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ParallelCallsApplication.class, args);
+		SpringApplication.run(ParallelFeignApplication.class, args);
 	}
 }

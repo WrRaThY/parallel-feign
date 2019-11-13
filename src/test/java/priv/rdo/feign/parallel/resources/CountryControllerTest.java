@@ -1,6 +1,6 @@
-package com.marcj.parallel.resources;
+package priv.rdo.feign.parallel.resources;
 
-import com.marcj.parallel.client.CountryClient;
+import priv.rdo.feign.parallel.client.CountryClient;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,8 +16,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static com.marcj.parallel.helper.CountryHelper.countriesByLanguageResponse;
-import static com.marcj.parallel.helper.CountryHelper.countriesByRegionResponse;
+import static priv.rdo.feign.parallel.helper.CountryHelper.countriesByLanguageResponse;
+import static priv.rdo.feign.parallel.helper.CountryHelper.countriesByRegionResponse;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

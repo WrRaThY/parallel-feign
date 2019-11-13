@@ -1,6 +1,6 @@
-package com.marcj.parallel.helper;
+package priv.rdo.feign.parallel.helper;
 
-import com.marcj.parallel.client.output.Country;
+import priv.rdo.feign.parallel.model.Country;
 
 import java.util.ArrayList;
 import java.util.List;

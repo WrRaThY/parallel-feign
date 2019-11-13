@@ -1,4 +1,4 @@
-package com.marcj.parallel;
+package priv.rdo.feign.parallel;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,6 @@
-package com.marcj.parallel.resources;
+package priv.rdo.feign.parallel.resources;
 
-import com.marcj.parallel.helper.CountryHelper;
+import priv.rdo.feign.parallel.helper.CountryHelper;
 import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -34,6 +34,6 @@ public class CountryControllerIntegrationTest {
 
         //THEN
         System.out.println("The test took " + (endTime - startTime) + " ms.");
-        assertThat(endTime - startTime).isBetween(3000L, 3500L);
+        assertThat(endTime - startTime).isLessThan(5000);
     }
 }

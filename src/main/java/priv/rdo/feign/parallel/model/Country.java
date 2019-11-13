@@ -1,4 +1,4 @@
-package com.marcj.parallel.client.output;
+package priv.rdo.feign.parallel.model;
 
 import lombok.*;
 

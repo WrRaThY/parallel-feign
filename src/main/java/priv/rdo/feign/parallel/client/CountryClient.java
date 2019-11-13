@@ -1,6 +1,6 @@
-package com.marcj.parallel.client;
+package priv.rdo.feign.parallel.client;
 
-import com.marcj.parallel.client.output.Country;
+import priv.rdo.feign.parallel.model.Country;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -19,6 +19,8 @@ public class CountryClient {
         String url = "https://restcountries.eu/rest/v2/lang/" + language + "?fields=name";
         Country[] response = restTemplate.getForObject(url, Country[].class);
 
+        TimeUnit.SECONDS.sleep(3);
+
         return CompletableFuture.completedFuture(Arrays.asList(response));
     }
 
@@ -26,6 +28,8 @@ public class CountryClient {
     public CompletableFuture<List<Country>> getCountriesByRegion(String region) throws InterruptedException {
         String url = "https://restcountries.eu/rest/v2/region/" + region + "?fields=name";
         Country[] response = restTemplate.getForObject(url, Country[].class);
+
+        TimeUnit.SECONDS.sleep(2);
 
         return CompletableFuture.completedFuture(Arrays.asList(response));
     }
